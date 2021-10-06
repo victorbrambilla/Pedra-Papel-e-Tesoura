@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel e Tesoura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container" >
+        <div class="out">
+            <div class="form">
+            
+                <input type="text" placeholder="Quantas rodadas jogar?" id="rounds">
+                
+            </div>
+    
+            <h1 class="title">Pedra, Papel e Tesoura</h1>
+            <h2>Escolha sua jogada</h2>
+            
+            <ul>
+                <li><a onclick="play(1);"><img class="img"  src="images/pedra.png" alt=""></a></li>
+                <li><a onclick="play(2);"><img class="img"  src="images/papel.png" alt=""></a> </li>
+                <li><a onclick="play(3);"><img class="img"  src="images/tesoura.png" alt=""></a> </li>
+            </ul>
+            <h2>Computador</h2>
+            <p><img class="img"   id="imgPc"></p>
+        </div>
+        
+
+        <div class="score">
+            <span id="winner"></span>
+
+            <div class="scorePoints">
+                <label>
+                    Jogador
+                    <p id="playerscore"></p>
+                </label>
+                X
+                <label>
+                    Computador
+                    <p id="computerscore" ></p>
+                </label>
+            </div>
+            
+        </div>
+
+        <div class="round">
+            
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
