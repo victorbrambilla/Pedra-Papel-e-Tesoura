@@ -7,6 +7,7 @@ function play(jogada){
     if(rounds){
         document.querySelector('#rounds').classList.add("displayNone")
 
+        //atualizador de informações
         $.ajax({
             type: 'post',
             url: '/game',
@@ -32,9 +33,9 @@ function play(jogada){
                     playerScore++
                     document.querySelector('#playerscore').innerHTML=`: ${playerScore}`
                 }else if(data.winner===2){
+                    document.querySelector('#winner').innerHTML="Você perdeu a rodada!!"
                     document.querySelector('#computerscore').innerHTML=`: ${computerScore}`
                     computerScore++
-    
                 }else if (data.winner===0){
                     document.querySelector('#winner').innerHTML="Empatou!!"
                 }
@@ -43,6 +44,7 @@ function play(jogada){
            
         });
         
+        //contagem de rodadas
         $.ajax({
             type: 'get',
             url: '/game',
@@ -61,39 +63,30 @@ function play(jogada){
             },
           
         });
-    
+        
+        //finalização da partida
         function finish(){
-            
-            $.ajax({
-                type: 'get',
-                url: '/game',
-                
-                contentType: "application/json; charset=utf-8",
-                
-                success: function (data) {
-                    
-                    setTimeout(function(){
-                        if(playerScore>computerScore){
-                            document.querySelector('.out').style.display='none'
-                            document.querySelector('#winner').innerHTML="<h1>Você ganhou a Partida</h1><br> <a href='' class='button'>Jogar novamente</a>"
-                        }else if(playerScore>computerScore){
-                            document.querySelector('.out').style.display='none'
-                            document.querySelector('#winner').innerHTML="<h1>Você perdeu a Partida</h1><br> <a href='' class='button'>Jogar novamente</a>"
-                        }else{
-                            document.querySelector('.out').style.display='none'
-                            document.querySelector('#winner').innerHTML="<h1>Partida Empatada</h1><br> <a href='' class='button'>Jogar novamente</a>"
-                        }
-                        
-                        delet()
 
-                    }, 1000)
-
-                },
+            setTimeout(function(){
+                if(playerScore>computerScore){
+                    document.querySelector('.out').style.display='none'
+                    document.querySelector('#winner').innerHTML="<h1>Você ganhou a Partida</h1><br> <a href='' class='button'>Jogar novamente</a>"
+                }else if(playerScore>computerScore){
+                    document.querySelector('.out').style.display='none'
+                    document.querySelector('#winner').innerHTML="<h1>Você perdeu a Partida</h1><br> <a href='' class='button'>Jogar novamente</a>"
+                }else{
+                    document.querySelector('.out').style.display='none'
+                    document.querySelector('#winner').innerHTML="<h1>Partida Empatada</h1><br> <a href='' class='button'>Jogar novamente</a>"
+                }
                 
-            });
+                del()
+
+            }, 700)
+
         }
-    
-        function delet(){
+
+        //apagar os dados
+        function del(){
             $.ajax({
                 type: 'delete',
                 url: '/game',
