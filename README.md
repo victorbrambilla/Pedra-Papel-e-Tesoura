@@ -3,7 +3,7 @@
 <h1>Jogo Pedra-Papel e tesoura </h1>
 <hr>
 <br>
-<br>
+
 <h1>Como Rodar</h1>
 <hr>
 1- Clonar o repositório para sua máquina local
