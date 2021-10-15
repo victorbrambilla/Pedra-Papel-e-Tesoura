@@ -24,3 +24,5 @@ node app.js
 ~~~Terminal
 http://localhost:3000
 ~~~
+
+![pedra papel](https://user-images.githubusercontent.com/88890771/137561639-bc671fdd-3d65-4dad-b7ea-3a462313fdd9.png)
