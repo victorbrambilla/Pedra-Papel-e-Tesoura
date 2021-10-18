@@ -29,4 +29,4 @@ http://localhost:3000
 
 <hr>
 
-Veja a prévia do jogo->https://victorbrambilla.github.io/Pedra-Papel-e-Tesoura/www/index.html
+Veja a prévia do jogo->[jogar](https://victorbrambilla.github.io/Pedra-Papel-e-Tesoura/www/index.html)
